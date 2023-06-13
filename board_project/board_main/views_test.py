@@ -37,7 +37,7 @@ def test_json_data(request):
 # 1. 특정 인덱스나 고유값으로 리소스에 접근해야할 때
 # # 2. 하나의 값으로 모든 리소스의 정보를 표현할 수 있는 값(pk)
 
-# 사용자가 get요청으로 쿼리파라미터 방식 데이터를 넣어올떄
+# 사용자가 get요청으로 쿼리파라미터 방식 데이터를 넣어올때
 # 사용자가 get요청으로 데이터를 넣어오는 2가지 방식
 #  1) 쿼리파라미터 방식 : localhosst:8000/author?id=10&name=hongildong  // http://127.0.0.1:8000/
 #  2) pathvariable 방식(좀 더 현대적인 방식): localhosst:8000/author/10
@@ -71,13 +71,16 @@ def test_html_parameter_data2(request, my_id):
 #form 태그를 활용한 post방식
 # 먼저 화면을 rendering 해주는 method
 
-def test_post_form(request):
-     return render(request, 'test/test_post_form.html')
+# def test_post_form(request):
+#      return render(request, 'test/test_post_form.html')
     
 
 def test_post_kim(request):
-    name = request.POST['my_name']
-    email = request.POST['my_email']
-    password = request.POST['my_password']
-    print(name + email + password)
-    return redirect('/')   # localhost:8000/
+    if request.method == 'POST':
+     name = request.POST['my_name']
+     email = request.POST['my_email']
+     password = request.POST['my_password']
+     print(name + email + password)
+     return redirect('/')   # localhost:8000/
+    else:
+     return render(request, 'test/test_post_form.html')

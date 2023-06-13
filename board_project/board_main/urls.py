@@ -7,7 +7,6 @@ urlpatterns = [
     path('test_json', views_test.test_json_data),
     path('parameter_data', views_test.test_html_parameter_data),
     path('parameter_data2/<int:my_id>', views_test.test_html_parameter_data2),
-    path('test_post', views_test.test_post_form),
     path('test_post_kim', views_test.test_post_kim),
     
 ]
