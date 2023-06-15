@@ -1,0 +1,24 @@
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    </head>
+    <body>
+
+
+<form action="http://127.0.0.1:8000/test_update" method="POST">
+    {% csrf_token %}
+    id : <input type = "text" name="my_id">
+    <br><br>
+    이름 : <input type = "text" name="my_name">
+    <br><br>
+    이메일 : <input type = "text" name="my_email">
+    <br><br>
+    패스워드 <input type ="text" name="my_password">
+    <br><br>
+    <input type="submit" value="수정하기">
+
+</form>
+</body>
+</html>

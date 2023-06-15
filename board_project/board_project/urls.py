@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # admin으로 들어오는 url빼고는 아래 path로 redirect
     path('', include('board_main.urls')),
+
 ]
